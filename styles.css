@@ -24,6 +24,20 @@ footer {
 }
 
 #game-container {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.game-item {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
