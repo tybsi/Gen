@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Portal</title>
+    <title>Burrito Bison Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Game Portal</h1>
-        <nav>
-            <ul id="game-list">
-                <li><a href="#slope">Slope</a></li>
-                <!-- Add links for other games -->
-            </ul>
-        </nav>
+        <h1>Burrito Bison Game</h1>
     </header>
 
     <main>
         <div id="game-container">
-            <!-- Game content will be dynamically added here -->
+            <iframe
+                width="800"
+                height="600"
+                frameborder="0"
+                src="burrito_bison.swf" <!-- Replace with the actual path to your Burrito Bison SWF file -->
+            ></iframe>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Game Portal</p>
+        <p>&copy; 2024 Burrito Bison Game</p>
     </footer>
 
-    <!-- Include scripts for each game -->
-    <script src="slope.js"></script>
-    <!-- Include scripts for other games -->
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ruffle@0.4.1/ruffle.js"></script>
 </body>
 </html>
