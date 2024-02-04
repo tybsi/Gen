@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embeddable Game Website</title>
+    <title>Game Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Embeddable Game Website</h1>
+        <h1>Game Portal</h1>
+        <nav>
+            <ul id="game-list">
+                <li><a href="#slope">Slope</a></li>
+                <!-- Add links for other games -->
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div id="embed-form">
-            <label for="url-input">https://extramath.netlify.app:</label>
-            <input type="text" id="url-input" placeholder="Enter URL">
-            <button onclick="embedUrl()">Embed</button>
-        </div>
-
-        <div id="embedded-content">
-            <!-- Embedded content will be dynamically added here -->
+        <div id="game-container">
+            <!-- Game content will be dynamically added here -->
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Embeddable Game Website</p>
+        <p>&copy; 2024 Game Portal</p>
     </footer>
 
+    <!-- Include scripts for each game -->
+    <script src="slope.js"></script>
+    <!-- Include scripts for other games -->
     <script src="main.js"></script>
 </body>
 </html>
