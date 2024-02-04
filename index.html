@@ -3,21 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish Games</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ruffle Emulator Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Fish Games</h1>
+        <h1>Ruffle Emulator Website</h1>
     </header>
+
     <main>
-        <section id="game-section">
-            <canvas id="fish-game"></canvas>
-        </section>
+        <h2>Flash Content Emulator</h2>
+        <p>This website uses Ruffle to emulate Flash content. Upload your Flash files or specify the URL of the Flash content to play.</p>
+
+        <!-- Ruffle Player container -->
+        <div id="ruffle-container"></div>
+
+        <!-- Input for Flash content URL -->
+        <label for="flash-url">Flash Content URL:</label>
+        <input type="text" id="flash-url" placeholder="Enter Flash content URL">
+        <button onclick="loadFlashContent()">Load Flash Content</button>
     </main>
-    <footer>
-        <p>&copy; 2024 Fish Games</p>
-    </footer>
-    <script src="game.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ruffle@0.4.1/ruffle.js"></script>
+    <script>
+        // Function to load Flash content using Ruffle
+        function loadFlashContent() {
+            const flashUrl = document.getElementById('flash-url').value;
+            
+            // Destroy the previous Ruffle instance (if any)
+            const ruffleContainer = document.getElementById('ruffle-container');
+            while (ruffleContainer.firstChild) {
+                ruffleContainer.firstChild.remove();
+            }
+
+            // Create a new Ruffle instance with the specified Flash content URL
+            const ruffle = RufflePlayer.new({
+                swf: flashUrl,
+                container: ruffleContainer,
+                parameters: {
+                    // Additional parameters if needed
+                }
+            });
+
+            ruffle.load();
+        }
+    </script>
 </body>
 </html>
